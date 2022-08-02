@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Underdog&display=swap');
+
+:root{
+    --first-color: #1f2229;
+    --input-color: #33c4a0;
+    --error-color: #ff5a5f;
+
+    --body-font: 'Roboto', sans-serif;
+
+    --title-font-size: 2.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .75rem;
+}
+
+*,::before,::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--body-font);
+    color: var(--first-color);
+    background-color: #e9e9e9;
+}
+
+h1, h2, h3, h4{
+    margin: 0;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+select{
+    padding: 0;
+}
+
+.container{
+    max-width: 800px;
+    margin: auto;
+}
+
+.main .container{
+    padding: 50px 0;
+    background-color: white;
+}
+
+.header{
+    background-color: var(--first-color);
+    color: white;
+}
+
+.header__logo{
+    display: flex;
+    align-items: center;
+}
+
+.header__logo h1{
+    margin-right: 20px;
+}
+
+.main__title{
+    text-align: center;
+    margin-bottom: 72px;
+    color: var(--first-color);
+}
+
+.main__title h2{
+    font-size: var(--title-font-size);
+    margin-bottom: 2rem;
+}
+.main__title p{
+    font-size: var(--small-font-size);
+}
+
+.main__deposit-form{
+    margin: auto;
+    padding: 0 114px;
+}
+
+.deposit-form__composite-element{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 242px;
+    overflow: hidden;
+}
+
+.deposit-form__composite-element__child{
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.deposit-form__composite-element__child-mod_sizing{
+    max-width: 30%;
+}
+
+.deposit-form-row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 38px;
+    justify-content:space-between;
+}
+
+.deposit-form__element{
+    position: relative;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    font-size: var(--small-font-size);
+    min-width: 242px;
+}
+
+.deposit-form__element input{
+    height: 100%;
+}
+
+.deposit-form__text-input{
+    width: 100%;
+    padding-left: 1.5rem;
+    font-size: var(--small-font-size);
+    outline: none;
+    border: 1px solid var(--first-color);
+    z-index: 1;
+    background: none;
+}
+
+.deposit-form__select-input{
+    width: 100%;
+    height: 100%;
+    font-size: var(--small-font-size);
+    outline: none;
+    border: 1px solid var(--first-color);
+    border-left: 0;
+    background-color: #fff;
+}
+
+.deposit-form__text-label{
+    position: absolute;
+    top: 1.2rem;
+    left: .8rem;
+    user-select: none;
+    transition: .2s;
+}
+
+.deposit-form__text-input:focus{
+    border-color: var(--input-color);
+    padding-top: 1.5rem;
+}
+.deposit-form__text-input:not(:placeholder-shown).deposit-form__text-input:not(:focus){
+    padding-top: 1.5rem;
+}
+
+.deposit-form__text-input:focus + .deposit-form__text-label{
+    top: 0.5rem;
+}
+
+.deposit-form__text-input:not(:placeholder-shown).deposit-form__text-input:not(:focus) + .deposit-form__text-label{
+    top: 0.5rem;
+}
+
+.deposit-form__submit{
+    background-color: var(--input-color);
+    width: 100%;
+    border: 0;
+    color: white;
+    cursor: pointer;
+}
+
+.deposit-form__text-input.invalid{
+    border: 1px solid var(--error-color);
+}
+
+.deposit-form__element__errors{
+    border: none;
+    position: absolute;
+    bottom: -1rem;
+    color: var(--error-color);
+    white-space:nowrap;
+    padding-left: 1.2rem;
+}
+
+.result-deposit{
+    width: 100%;
+    border-top: 1px solid var(--first-color);
+    margin-top: 3rem;
+    padding-top: 3rem;
+
+    display: none;
+
+    font-size: var(--small-font-size);
+}
+
+.deposit-result{
+    color: #000;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+@media (max-width: 768px) {
+    .main__deposit-form{
+        padding: 0 25px;
+    }
+    .deposit-form-row{
+        align-items: center;
+        justify-content:center;
+    }
+    
+    .deposit-form__element{
+        width: 100%;
+    }
+
+    .deposit-form__composite-element{
+        max-width: 100%;
+        width: 100%;
+    }
+}
